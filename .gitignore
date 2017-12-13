@@ -1,8 +1,8 @@
 target/
 *.iml
 .idea
-#.classpath
-#.project
+.classpath
+.project
 .DS_Store
 /bin/*
 /bin/
