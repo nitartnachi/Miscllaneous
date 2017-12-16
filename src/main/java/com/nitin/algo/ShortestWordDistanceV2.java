@@ -9,6 +9,11 @@
 
 package com.nitin.algo;
 
-public class ShortestWordDistance {
+public class ShortestWordDistanceV2 {
+	
+	public static void main(String[] args) {
+		int n = 48;
+		System.out.println(n + " is power of 2: " + isPowerOfTwo(n));
+	}
 
 }
