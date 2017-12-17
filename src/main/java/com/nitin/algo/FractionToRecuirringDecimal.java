@@ -9,5 +9,35 @@
 package com.nitin.algo;
 
 public class FractionToRecuirringDecimal {
+	
+	public static void main(String[] args) {
+		int num = 2, den = 3;
+		System.out.println("Fraction is: " + getFraction(num, den));
+	}
+
+	private static String getFraction(int num, int den) {
+		if(den == 0)
+			throw new IllegalArgumentException("Input not valid.");
+		
+		double fraction = (double)num / den;
+		boolean repeat = true;
+		
+		String decimal = String.valueOf(fraction);
+		String[] parts = decimal.split("\\.");
+		
+		char[] arr = parts[1].toCharArray();
+		if(arr.length <= 1)
+			return decimal;
+		
+		for(int i = 0; i < arr.length; i++) {
+			if(i + 1 < arr.length) {
+				if(arr[i] != arr[i + 1]) {
+					repeat = false;
+					break;
+				}
+			}
+		}
+		return (repeat) ? parts[0] + "." +  "(" + arr[0] + ")" : decimal;
+	}
 
 }
